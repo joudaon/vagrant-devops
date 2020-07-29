@@ -12,34 +12,12 @@ echo "----> Installing dbeaver..."
 
 dbeaver_version="7.1.3"
 
-wget https://github.com/dbeaver/dbeaver/releases/download/$dbeaver_version/dbeaver-ce_$dbeaver_version_amd64.deb
+apt-get -y install default-jdk
+wget https://github.com/dbeaver/dbeaver/releases/download/${dbeaver_version}/dbeaver-ce_${dbeaver_version}_amd64.deb
+dpkg -i dbeaver-ce_${dbeaver_version}_amd64.deb
+rm -rf dbeaver-ce_${dbeaver_version}_amd64.deb
 
 echo "--> dbeaver successfully installed."
-
-#####################
-###### vs-code ######
-#####################
-
-echo "----> Installing vs-code..."
-
-# Download and install vs-code
-apt-get update
-apt-get install -y software-properties-common apt-transport-https wget
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add -
-add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-apt-get update
-apt-get install -y code
-
-# Install plugins from cli - https://code.visualstudio.com/docs/editor/extension-gallery
-plugins=( "donjayamanne.githistory" "eamodio.gitlens" "hashicorp.terraform" "ivory-lab.jenkinsfile-support" "korekontrol.saltstack" "marcostazi.VS-code-vagrantfile" "mhutchie.git-graph" "mhutchie.git-graph" "ms-kubernetes-tools.vscode-kubernetes-tools" "ms-python.python" "redhat.vscode-yaml" "vscode-icons-team.vscode-icons" "vscoss.vscode-ansible" "wholroyd.jinja" "yzhang.markdown-all-in-one" "zhangciwu.swig-tpl")
-
-for i in "${plugins[@]}"
-do
-  echo "--> Installing plugin $i"
-  runuser -l vagrant -c "code --install-extension $i"
-done
-
-echo "--> vs-code successfully installed."
 
 ####################
 ###### docker ######
@@ -136,3 +114,40 @@ rm skaffold
 echo "skaffold Version --> $(skaffold version)"
 
 echo "--> skaffold successfully installed."
+
+#####################
+###### vs-code ######
+#####################
+
+echo "----> Installing vs-code..."
+
+# Download and install vs-code
+apt-get update
+apt-get install -y software-properties-common apt-transport-https wget
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add -
+add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+apt-get update
+apt-get install -y code
+
+# Fix: https://askubuntu.com/questions/760896/how-can-i-fix-apt-error-w-target-packages-is-configured-multiple-times
+rm -rf /etc/apt/sources.list.d/vscode.list
+
+# Install plugins from cli - https://code.visualstudio.com/docs/editor/extension-gallery
+plugins=( "donjayamanne.githistory" "eamodio.gitlens" "hashicorp.terraform" "ivory-lab.jenkinsfile-support" "korekontrol.saltstack" "marcostazi.VS-code-vagrantfile" "mhutchie.git-graph" "mhutchie.git-graph" "ms-kubernetes-tools.vscode-kubernetes-tools" "ms-python.python" "redhat.vscode-yaml" "vscode-icons-team.vscode-icons" "vscoss.vscode-ansible" "wholroyd.jinja" "yzhang.markdown-all-in-one" "zhangciwu.swig-tpl")
+
+for i in "${plugins[@]}"
+do
+  echo "--> Installing plugin $i"
+  runuser -l vagrant -c "code --install-extension $i"
+done
+
+echo "--> vs-code successfully installed."
+
+########################
+###### favourites ######
+########################
+
+# Help: https://itectec.com/ubuntu/ubuntu-add-app-to-favorites-from-command-line/
+
+echo "----> Updating favourites..."
+gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'code.desktop', 'org.gnome.Terminal.desktop', 'dbeaver.desktop']"

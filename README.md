@@ -4,6 +4,7 @@
   - [Summary](#summary)
   - [Requirements](#requirements)
   - [How to deploy](#how-to-deploy)
+  - [Packages](#packages)
 
 
 ## Summary
@@ -38,4 +39,17 @@ Then, using vagrant we deploy the Ubuntu Desktop box and we configure it:
 $> cd vagrant
 $> vagrant up
 ```
+
+## Packages
+
+The following packages will be installed:
+
+- dbeaver
+- docker
+- docker-compose
+- helm
+- kubectl
+- minikube
+- skaffold
+- vs-code
 
