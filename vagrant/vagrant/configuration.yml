@@ -1,0 +1,11 @@
+vagrant_conf:
+    cachier: true
+    rsync__auto: True
+
+ubuntu_conf:
+  hostname: ubuntu-devops
+  cpus: 2
+  ip: 10.0.1.10
+  box: ubuntu-devops
+  box_url: ../packer/box/virtualbox/ubuntu1804-desktop-0.1.0.box
+  ram: 4096
