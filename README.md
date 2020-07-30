@@ -43,12 +43,14 @@ $> vagrant up
 
 The following packages will be installed (you can update them on `vagrant/provision/devops_tools.sh`):
 
+- aws-cli
 - dbeaver
 - docker
 - docker-compose
 - gradle
 - helm
 - kubectl
+- maven
 - minikube
 - skaffold
 - vs-code

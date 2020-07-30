@@ -5,6 +5,21 @@ echo "-----> Starting 'devops-tools' script <-------"
 echo "----------------------------------------------"
 
 #####################
+###### aws-cli ######
+#####################
+
+echo "----> Installing aws-cli..."
+
+cd /tmp \
+&& curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+&& unzip awscliv2.zip \
+&& ./aws/install \
+&& rm -rf awscliv2.zip \
+&& echo "AWS-CLI Version --> $(aws --version)"
+
+echo "--> aws-cli successfully installed."
+
+#####################
 ###### dbeaver ######
 #####################
 
@@ -103,6 +118,18 @@ kubectl version
 echo "kubectl Version --> $(kubectl version)"
 
 echo "--> kubectl successfully installed."
+
+###################
+###### maven ######
+###################
+
+echo "----> Installing mvn."
+
+apt-get update
+apt-get install -y maven
+echo "maven Version --> $(mvn -version)"
+
+echo "--> mvn successfully installed."
 
 ######################
 ###### minikube ######
