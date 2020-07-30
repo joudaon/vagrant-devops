@@ -115,6 +115,20 @@ echo "Helm Version --> $(helm version)"
 
 echo "--> helm successfully installed."
 
+####################
+##### intellij #####
+####################
+
+# Download page: https://www.jetbrains.com/idea/download/other.html
+
+intellij_version="2020.2"
+
+echo "----> Installing intellij."
+
+snap install intellij-idea-community --classic
+
+echo "--> intellij successfully installed."
+
 #####################
 ###### kubectl ######
 #####################
