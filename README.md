@@ -6,7 +6,6 @@
   - [How to deploy](#how-to-deploy)
   - [Packages](#packages)
 
-
 ## Summary
 
 This project is an extension of this one: https://github.com/boxcutter/ubuntu
@@ -42,14 +41,16 @@ $> vagrant up
 
 ## Packages
 
-The following packages will be installed:
+The following packages will be installed (you can update them on `vagrant/provision/devops_tools.sh`):
 
 - dbeaver
 - docker
 - docker-compose
+- gradle
 - helm
 - kubectl
 - minikube
 - skaffold
 - vs-code
 
+https://askubuntu.com/questions/866990/system-monitor-how-to-display-net-speed-on-panel

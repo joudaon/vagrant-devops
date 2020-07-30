@@ -43,11 +43,34 @@ echo "----> Installing docker-compose"
 curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
 && chmod +x /usr/local/bin/docker-compose
 
+echo "--> docker-compose successfully installed."
+
+##################
+##### gradle #####
+##################
+
+# Download page: https://gradle.org/install/
+
+gradle_version="6.5.1"
+
+echo "----> Installing gradle"
+
+mkdir /opt/gradle
+cd /opt/gradle
+wget https://services.gradle.org/distributions/gradle-${gradle_version}-bin.zip
+unzip -d /opt/gradle gradle-${gradle_version}-bin.zip
+rm -rf gradle-${gradle_version}-bin.zip
+# Permanently add gradle to path
+runuser -l vagrant -c "echo "PATH="$PATH:/opt/gradle/gradle-${gradle_version}/bin"" >> /home/vagrant/.profile"
+gradle -v
+
+echo "--> gradle successfully installed."
+
 ####################
 ####### helm #######
 ####################
 
-# Dowload page: https://github.com/helm/helm/releases
+# Download page: https://github.com/helm/helm/releases
 
 helm_version="helm-v3.1.2-linux-amd64.tar.gz"
 
@@ -66,7 +89,7 @@ echo "--> helm successfully installed."
 ###### kubectl ######
 #####################
 
-# Dowload page: https://github.com/kubernetes/kubectl/releases
+# Download page: https://github.com/kubernetes/kubectl/releases
 
 kubectl_version="v1.17.4"
 
@@ -85,7 +108,7 @@ echo "--> kubectl successfully installed."
 ###### minikube ######
 ######################
 
-# Dowload page: https://github.com/kubernetes/minikube/releases/
+# Download page: https://github.com/kubernetes/minikube/releases/
 
 minikube_version="v1.12.1"
 
@@ -103,7 +126,7 @@ echo "--> Minikube successfully installed."
 ###### skaffold ######
 ######################
 
-# Dowload page: https://skaffold.dev/docs/install/
+# Download page: https://skaffold.dev/docs/install/
 
 echo "--> Installing skaffold."
 
@@ -147,7 +170,7 @@ echo "--> vs-code successfully installed."
 ###### favourites ######
 ########################
 
-# Help: https://itectec.com/ubuntu/ubuntu-add-app-to-favorites-from-command-line/
+# # Help: https://itectec.com/ubuntu/ubuntu-add-app-to-favorites-from-command-line/
 
-echo "----> Updating favourites..."
-gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'code.desktop', 'org.gnome.Terminal.desktop', 'dbeaver.desktop']"
+# echo "----> Updating favourites..."
+# gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'code.desktop', 'org.gnome.Terminal.desktop', 'dbeaver.desktop']"
