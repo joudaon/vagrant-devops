@@ -9,9 +9,7 @@
 
 ## Summary
 
-This project is an extension of this one: https://github.com/boxcutter/ubuntu
-
-The aim of this project is to deploy an Ubuntu Desktop with all required DevOps tools installed.
+The aim of this project is to deploy an Ubuntu Desktop environment with all required DevOps tools installed.
 
 ## Requirements
 
@@ -25,7 +23,7 @@ The aim of this project is to deploy an Ubuntu Desktop with all required DevOps 
 
 ## How to deploy
 
-First we create a clean Ubuntu Desktop box using packer:
+First we create a clean Ubuntu Desktop box using `packer`:
 
 ```sh
 $> cd packer
@@ -33,12 +31,14 @@ $> packer build -var-file=ubuntu1804-desktop.json ubuntu.json
   ** If it gets stuck try again
 ```
 
-Then, using vagrant we deploy the Ubuntu Desktop box and we configure it:
+Then, using `vagrant` we deploy the Ubuntu Desktop box and we install all the required tools:
 
 ```sh
 $> cd vagrant
 $> vagrant up
 ```
+
+Finally, log in into Ubuntu Desktop with the following credentials: `vagrant/vagrant`.
 
 ## Packages
 
