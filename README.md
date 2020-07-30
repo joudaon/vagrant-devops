@@ -44,6 +44,7 @@ $> vagrant up
 The following packages will be installed (you can update them on `vagrant/provision/devops_tools.sh`):
 
 - aws-cli
+- az-cli
 - dbeaver
 - docker
 - docker-compose

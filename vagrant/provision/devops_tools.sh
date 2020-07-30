@@ -8,6 +8,8 @@ echo "----------------------------------------------"
 ###### aws-cli ######
 #####################
 
+# Help: https://docs.aws.amazon.com/es_es/cli/latest/userguide/install-cliv2-linux.html
+
 echo "----> Installing aws-cli..."
 
 cd /tmp \
@@ -18,6 +20,19 @@ cd /tmp \
 && echo "AWS-CLI Version --> $(aws --version)"
 
 echo "--> aws-cli successfully installed."
+
+####################
+###### az-cli ######
+####################
+
+# Help: https://docs.microsoft.com/es-es/cli/azure/install-azure-cli?view=azure-cli-latest
+
+echo "----> Installing az-cli..."
+
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+echo "AZ-CLI Version --> $(az --version)"
+
+echo "--> az-cli successfully installed."
 
 #####################
 ###### dbeaver ######
