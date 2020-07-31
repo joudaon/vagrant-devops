@@ -5,12 +5,15 @@
   - [Requirements](#requirements)
   - [How to deploy](#how-to-deploy)
   - [Packages](#packages)
+  - [Vagrant plugins](#vagrant-plugins)
   - [Useful links](#useful-links)
   - [TODO](#todo)
 
 ## Summary
 
 The aim of this project is to deploy an Ubuntu Desktop environment with all required DevOps tools installed.
+
+In order to achieve this, the project has been splitted into 2 parts, `packer` and `vagrant` folders. The first one is required to create and empty Ubuntu Desktop `vagrant box`. The second one deployes Ubuntu Desktop environment using the `Vagrantfile`.
 
 ## Requirements
 
@@ -45,8 +48,8 @@ Finally, log in into Ubuntu Desktop with the following credentials: `vagrant/vag
 
 The following packages will be installed (you can update them on `vagrant/provision/devops_tools.sh`):
 
-- [aws-cli](https://aws.amazon.com/cli/?nc1=h_ls) - The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services.
-- [az-cli](https://docs.microsoft.com/en-gb/cli/azure/install-azure-cli?view=azure-cli-latest) - The Azure command-line interface (Azure CLI) is a set of commands used to create and manage Azure resources.
+- [aws-cli](https://aws.amazon.com/cli/) - The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services.
+- [az-cli](https://docs.microsoft.com/en-gb/cli/azure/install-azure-cli) - The Azure command-line interface (Azure CLI) is a set of commands used to create and manage Azure resources.
 - [dbeaver](https://dbeaver.io/) - Free multi-platform database tool for developers, database administrators, analysts and all people who need to work with databases.
 - [docker](https://www.docker.com/) - Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers.
 - [docker-compose](https://docs.docker.com/compose/) - Compose is a tool for defining and running multi-container Docker applications. 
@@ -58,6 +61,19 @@ The following packages will be installed (you can update them on `vagrant/provis
 - [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) - Minikube is a tool that runs a single-node Kubernetes cluster in a virtual machine on your personal computer.
 - [skaffold](https://skaffold.dev/) - Skaffold handles the workflow for building, pushing and deploying your application, allowing you to focus on what matters most: writing code.
 - [vs-code](https://code.visualstudio.com/) - Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS.
+
+## Vagrant plugins
+
+The `Vagrantfile` is smart enough to run some actions if some plugins are installed or not, but it is highly recommende to install the following plugins:
+
+- [vagrant-cachier](https://github.com/fgrehm/vagrant-cachier)
+- [vagrant-disksize](https://github.com/sprotheroe/vagrant-disksize)
+- [vagrant-hosts](https://github.com/oscar-stack/vagrant-hosts)
+- [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) 
+
+```sh
+$ vagrant plugin install vagrant-cachier vagrant-disksize vagrant-hosts vagrant-vbguest
+```
 
 ## Useful links
 
