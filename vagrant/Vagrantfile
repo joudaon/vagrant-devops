@@ -22,11 +22,14 @@ Vagrant.configure("2") do |config|
     }
   end
 
-  # ansible-master
+  # ubuntu-devops
   config.vm.define ubuntu_conf["hostname"] do |ubuntu|
     ubuntu.vm.box = ubuntu_conf["box"]
     ubuntu.vm.box_url = ubuntu_conf["box_url"]
     ubuntu.vm.hostname = ubuntu_conf["hostname"]
+    if Vagrant.has_plugin?("vagrant-disksize") and ubuntu_conf["disksize"]
+      ubuntu.disksize.size = ubuntu_conf["disksize"]
+    end
     ubuntu.vm.network :private_network, ip: ubuntu_conf["ip"]
     if Vagrant.has_plugin?("vagrant-hosts")
       ubuntu.vm.provision :hosts, :sync_hosts => true

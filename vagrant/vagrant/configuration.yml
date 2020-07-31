@@ -9,3 +9,4 @@ ubuntu_conf:
   box: ubuntu-devops
   box_url: ../packer/box/virtualbox/ubuntu1804-desktop-0.1.0.box
   ram: 4096
+  disksize: 30GB

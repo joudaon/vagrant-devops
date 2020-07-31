@@ -6,6 +6,7 @@
   - [How to deploy](#how-to-deploy)
   - [Packages](#packages)
   - [Useful links](#useful-links)
+  - [TODO](#todo)
 
 ## Summary
 
@@ -64,3 +65,8 @@ The following packages will be installed (you can update them on `vagrant/provis
 - [packer-ubuntu-18-bionic](https://github.com/aravindkumarsvg/packer-ubuntu-18-bionic)
 - [packer-ubuntu-18.04](https://github.com/heizo/packer-ubuntu-18.04)
 - [System Monitor: How to display net speed on panel](https://askubuntu.com/questions/866990/system-monitor-how-to-display-net-speed-on-panel)
+
+## TODO
+
+- fix: `preseed.cfg` to generate `/dev/sda1` instead of `/dev/mapper/ubuntu--vg--root` to enable disk resize in vagrant.
+- fix: `change_keyboard_layout.sh` script, it doesn't work.
