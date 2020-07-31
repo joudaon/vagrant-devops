@@ -46,7 +46,7 @@ Finally, log in into Ubuntu Desktop with the following credentials: `vagrant/vag
 
 ## Packages
 
-The following packages will be installed (you can update them on `vagrant/provision/devops_tools.sh`):
+The following packages will be installed on Ubuntu Desktop vm (you can update them on `vagrant/provision/devops_tools.sh`):
 
 - [aws-cli](https://aws.amazon.com/cli/) - The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services.
 - [az-cli](https://docs.microsoft.com/en-gb/cli/azure/install-azure-cli) - The Azure command-line interface (Azure CLI) is a set of commands used to create and manage Azure resources.
@@ -64,7 +64,7 @@ The following packages will be installed (you can update them on `vagrant/provis
 
 ## Vagrant plugins
 
-The `Vagrantfile` is smart enough to run some actions if some plugins are installed or not, but it is highly recommende to install the following plugins:
+The `Vagrantfile` is smart enough to run some actions if some plugins are installed or not, but it is highly recommended to install the following plugins:
 
 - [vagrant-cachier](https://github.com/fgrehm/vagrant-cachier)
 - [vagrant-disksize](https://github.com/sprotheroe/vagrant-disksize)
