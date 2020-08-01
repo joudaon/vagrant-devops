@@ -40,9 +40,9 @@ Packer deployment can take up to ~35 minutes (depending on your internet connect
 ```sh
 $> packer build -var-file=ubuntu1804-desktop.json ubuntu.json
 
-real    19m48.447s
-user    0m11.027s
-sys     0m25.456s
+real    35m56.778s
+user    0m31.550s
+sys     0m28.679s
 ```
 
 Then, using `vagrant` we deploy the Ubuntu Desktop box and we install all the required tools:
@@ -63,7 +63,6 @@ sys     0m25.456s
 ```
 
 Finally, log in into Ubuntu Desktop with the following credentials: `vagrant/vagrant`.
-
 
 ## Packages
 
