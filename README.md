@@ -81,8 +81,13 @@ $ vagrant plugin install vagrant-cachier vagrant-disksize vagrant-hosts vagrant-
 - [packer-ubuntu-18-bionic](https://github.com/aravindkumarsvg/packer-ubuntu-18-bionic)
 - [packer-ubuntu-18.04](https://github.com/heizo/packer-ubuntu-18.04)
 - [System Monitor: How to display net speed on panel](https://askubuntu.com/questions/866990/system-monitor-how-to-display-net-speed-on-panel)
+- [Using d-i partman recipe strings?](https://unix.stackexchange.com/questions/341253/using-d-i-partman-recipe-strings)
+- [Partman y preseed, error de particionamiento](https://www.it-swarm.dev/es/partitioning/partman-y-preseed-error-de-particionamiento/961380979/)
+- [preseed-fragment.seed](https://gist.github.com/lorin/5140029)
+- [How to automatically resize virtual box disk with vagrant](https://medium.com/@kanrangsan/how-to-automatically-resize-virtual-box-disk-with-vagrant-9f0f48aa46b3)
+- [Ubuntu: Extending a virtualized disk when using LVM](https://fabianlee.org/2016/07/26/ubuntu-extending-a-virtualized-disk-when-using-lvm/)
+- [Vagrant shared and synced folders](https://stackoverflow.com/questions/18528717/vagrant-shared-and-synced-folders)
 
 ## TODO
 
-- fix: `preseed.cfg` to generate `/dev/sda1` instead of `/dev/mapper/ubuntu--vg--root` to enable disk resize in vagrant.
 - fix: `change_keyboard_layout.sh` script, it doesn't work.
