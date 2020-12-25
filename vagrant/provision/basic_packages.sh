@@ -8,7 +8,7 @@ echo "-------------------------------------------------------------"
 
 echo "----> Installing basic packages"
 ## declare an array variable
-declare -a arr=("git" "htop" "tree" "ncdu" "vim" "net-tools" "byobu" "iftop" "python" "ipython" "python3" "ipython3")
+declare -a arr=("byobu" "curl" "git" "htop" "iftop" "ipython" "ipython3" "ncdu" "netcat" "net-tools" "nmap" "python" "python3" "tree" "vim")
 
 # declare FRONTEND environment variable
 #export FRONTEND=noninteractive
@@ -17,7 +17,7 @@ declare -a arr=("git" "htop" "tree" "ncdu" "vim" "net-tools" "byobu" "iftop" "py
 ## now loop through the above array
 for i in "${arr[@]}"
 do
-  echo "----> Installing following package:" $i
+  echo "--> Installing package:" $i
   DEBIAN_FRONTEND=noninteractive apt-get install -y $i
   # or do whatever with individual element of the array
 done

@@ -19,7 +19,7 @@ In order to achieve this, the project has been splitted into 2 parts, `packer` a
 
 | Packer version | Virtualbox version               |
 | -------------- | -------------------------------- |
-| v1.6.0         | Version 6.1.10 r138449 (Qt5.9.5) |
+| v1.6.0         | Version 6.1.16 r140961 (Qt5.9.5) |
 
 | Vagrant version |
 | --------------- |
@@ -76,6 +76,7 @@ The following packages will be installed on Ubuntu Desktop vm (you can update th
 - [gradle](https://gradle.org/) - Gradle is an open-source build automation tool focused on flexibility and performance. 
 - [helm](https://helm.sh/) - Helm is the best way to find, share, and use software built for Kubernetes.
 - [intellij](https://www.jetbrains.com/idea/) - IntelliJ is an integrated development environment (IDE) written in Java for developing computer software. 
+- [k9s](https://k9scli.io/) - K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of this project is to make it easier to navigate, observe and manage your deployed applications in the wild.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) - kubectl, allows you to run commands against Kubernetes clusters. 
 - [maven](https://maven.apache.org/) - Apache Maven is a software project management and comprehension tool.
 - [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) - Minikube is a tool that runs a single-node Kubernetes cluster in a virtual machine on your personal computer.

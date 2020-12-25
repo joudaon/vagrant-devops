@@ -40,7 +40,7 @@ echo "--> az-cli successfully installed."
 
 echo "----> Installing dbeaver..."
 
-dbeaver_version="7.1.3"
+dbeaver_version="7.3.1"
 
 apt-get -y install default-jdk
 wget https://github.com/dbeaver/dbeaver/releases/download/${dbeaver_version}/dbeaver-ce_${dbeaver_version}_amd64.deb
@@ -102,7 +102,7 @@ echo "--> gradle successfully installed."
 
 # Download page: https://github.com/helm/helm/releases
 
-helm_version="helm-v3.1.2-linux-amd64.tar.gz"
+helm_version="helm-v3.4.2-linux-amd64.tar.gz"
 
 echo "----> Installing helm."
 
@@ -128,6 +128,22 @@ echo "----> Installing intellij."
 snap install intellij-idea-community --classic
 
 echo "--> intellij successfully installed."
+
+#################
+###### k9s ######
+#################
+
+K9S_VERSION="v0.24.2"
+
+cd /tmp
+wget https://github.com/derailed/k9s/releases/download/$K9S_VERSION/k9s_Linux_x86_64.tar.gz
+tar -zxvf k9s_Linux_x86_64.tar.gz
+cp k9s /usr/local/bin/k9s
+
+rm -rf k9s_Linux_x86_64.tar.gz k9s LICENCE README.md
+echo "k9s Version --> $(k9s version)"
+
+echo "--> k9s successfully installed."
 
 #####################
 ###### kubectl ######
@@ -166,7 +182,7 @@ echo "--> mvn successfully installed."
 
 # Download page: https://github.com/kubernetes/minikube/releases/
 
-minikube_version="v1.12.1"
+minikube_version="v1.16.0"
 
 echo "----> Installing minikube."
 
