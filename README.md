@@ -38,7 +38,7 @@ $> packer build -var-file=ubuntu1804-desktop.json ubuntu.json
 Packer deployment can take up to ~35 minutes (depending on your internet connection):
 
 ```sh
-$> packer build -var-file=ubuntu1804-desktop.json ubuntu.json
+$> time packer build -var-file=ubuntu1804-desktop.json ubuntu.json
 
 real    35m56.778s
 user    0m31.550s
@@ -81,6 +81,8 @@ The following packages will be installed on Ubuntu Desktop vm (you can update th
 - [maven](https://maven.apache.org/) - Apache Maven is a software project management and comprehension tool.
 - [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) - Minikube is a tool that runs a single-node Kubernetes cluster in a virtual machine on your personal computer.
 - [skaffold](https://skaffold.dev/) - Skaffold handles the workflow for building, pushing and deploying your application, allowing you to focus on what matters most: writing code.
+- [terraform](https://www.terraform.io/) - Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage hundreds of cloud services. Terraform codifies cloud APIs into declarative configuration files.
+- [vagrant](https://www.vagrantup.com/) - HashiCorp Vagrant provides the same, easy workflow regardless of your role as a developer, operator, or designer. It leverages a declarative configuration file which describes all your software requirements, packages, operating system configuration, users, and more.
 - [vs-code](https://code.visualstudio.com/) - Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS.
 
 ## Vagrant plugins

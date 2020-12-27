@@ -21,7 +21,9 @@ GRADLE_VERSION="6.5.1"
 HELM_VERSION="helm-v3.4.2-linux-amd64.tar.gz"
 K9S_VERSION="v0.24.2"
 KUBECTL_VERSION=$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
-MINIKUBE_VERSION="v1.15.0"
+MINIKUBE_VERSION="v1.16.0"
+TERRAFORM_VERSION="0.14.3"
+VAGRANT_VERSION="2.2.14"
 USER="vagrant"
 
 #####################
@@ -311,6 +313,46 @@ if [ ! -f /usr/local/bin/skaffold ]; then
 else
 
   echo "--> PACKAGE: 'skaffold' already installed!"
+
+fi
+
+#####################
+#### terraform ######
+#####################
+
+if [ ! -f /usr/local/bin/terraform ]; then
+
+  cd /tmp 
+  wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+  unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+  rm -rf terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+  mv terraform /usr/local/bin/terraform
+  echo "--> Terraform version: $(terraform version)"
+
+else
+
+  echo "--> PACKAGE: 'terraform' already installed!"
+
+fi
+
+#####################
+###### vagrant ######
+#####################
+
+if ! dpkg -s vagrant > /dev/null; then
+
+  echo "----> Installing vagrant..."
+
+  wget https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_x86_64.deb
+  dpkg -i vagrant_${VAGRANT_VERSION}_x86_64.deb
+  rm -rf vagrant_${VAGRANT_VERSION}_x86_64.deb
+
+  echo "Vagrant version --> $(vagrant -v)"
+  echo "--> vagrant successfully installed."
+
+else
+
+  echo "--> PACKAGE: 'vagrant' already installed!"
 
 fi
 
