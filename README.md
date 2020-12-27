@@ -19,11 +19,11 @@ In order to achieve this, the project has been splitted into 2 parts, `packer` a
 
 | Packer version | Virtualbox version               |
 | -------------- | -------------------------------- |
-| v1.6.0         | Version 6.1.16 r140961 (Qt5.9.5) |
+| v1.6.6         | Version 6.1.16 r140961 (Qt5.9.5) |
 
 | Vagrant version |
 | --------------- |
-|  v2.2.9         |
+|  v2.2.14        |
 
 ## How to deploy
 
