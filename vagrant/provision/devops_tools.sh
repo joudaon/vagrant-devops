@@ -4,7 +4,7 @@
 : '
 This script installs some DevOps tools
 Tested against: Ubuntu 18.04.5 LTS
-Latest update: 2020/12/26
+Latest update: 2021/03/03
 '
 
 echo "----------------------------------------------"
@@ -15,14 +15,14 @@ echo "----------------------------------------------"
 
 ## Define here versions and users
 
-DBEAVER_VERSION="7.3.1"
-DOCKER_COMPOSE_VERSION="1.27.4"
+DBEAVER_VERSION="21.0.0"
+DOCKER_COMPOSE_VERSION="1.28.5"
 GRADLE_VERSION="6.5.1"
-HELM_VERSION="helm-v3.4.2-linux-amd64.tar.gz"
+HELM_VERSION="helm-v3.5.2-linux-amd64.tar.gz"
 K9S_VERSION="v0.24.2"
 KUBECTL_VERSION=$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
-MINIKUBE_VERSION="v1.16.0"
-TERRAFORM_VERSION="0.14.3"
+MINIKUBE_VERSION="v1.18.0"
+TERRAFORM_VERSION="0.14.7"
 VAGRANT_VERSION="2.2.14"
 USER="vagrant"
 
